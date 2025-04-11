@@ -1,20 +1,12 @@
+// Import required modules
 const express = require('express'); // Ensure Express is required
-const app = express(); // Create the Express app instance
+const mongoose = require('mongoose'); // Declare mongoose only once!
+const path = require('path'); // Import path for serving static files
 
-// Sample route
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+// Initialize the Express app
+const app = express(); 
 
-// Start the server
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
-
-
-const mongoose = require('mongoose');
-
+// Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/mydatabase', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -24,12 +16,37 @@ mongoose.connect('mongodb://localhost:27017/mydatabase', {
     console.error("Error connecting to MongoDB", err);
 });
 
-
-const path = require('path');
-
 // Serve static files from the public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(3000, () => {
-    console.log("Server is running on http://localhost:3000");
+// Define a Visitor schema
+const visitorSchema = new mongoose.Schema({
+    ipAddress: { type: String, unique: true },
+    timestamp: { type: Date, default: Date.now }
+});
+const Visitor = mongoose.model('Visitor', visitorSchema);
+
+// Define a Test schema
+const testSchema = new mongoose.Schema({
+    name: String,
+    timestamp: { type: Date, default: Date.now }
+});
+const Test = mongoose.model('Test', testSchema);
+
+// Sample route to serve the homepage
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Add a test route to insert sample data into MongoDB
+app.get('/add-test', async (req, res) => {
+    const testDoc = new Test({ name: "Sample Entry" });
+    await testDoc.save();
+    res.send("Test document added to the database!");
+});
+
+// Start the server
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });

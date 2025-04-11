@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Modern Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Welcome </h1>
+        <p>Heres some cats!</p>
+    </header>
+
+    <main class="main-content">
+        <section id="dateTimeSection" class="card">
+            <h2>Current Date & Time</h2>
+            <div id="dateTime"></div>
+        </section>
+
+        <section id="slideshowSection" class="card">
+            <h2>Slideshow</h2>
+            <div class="slideshow-container">
+                <img id="slideshow" src="image1.jpg" alt="Slideshow Image">
+            </div>
+        </section>
+
+        <section id="extrasSection" class="card">
+            <div id="calendar">
+                <h2>Calendar</h2>
+                <p>Today's Date: <span id="todayDate"></span></p>
+            </div>
+            <div id="todoList">
+                <h2>TODO List</h2>
+                <ul>
+                    <li>Learn Express.js</li>
+                    <li>Connect to MongoDB</li>
+                    <li>Deploy Application</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
