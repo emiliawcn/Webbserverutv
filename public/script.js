@@ -1,19 +1,25 @@
-// Datum och tid
-function updateDateTime() {
-    const now = new Date();
-    document.getElementById("dateTime").innerText = now.toLocaleString();
-}
-setInterval(updateDateTime, 1000);
+// Ladda in dynamisk artistinfo
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("Countrymusiksidan är laddad!");
+});
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Förhindrar att formuläret skickas direkt
 
-// Bildspel
-const images = ["kitty cat.jpg", "kitty cat 2.avif", "kitty cat 3.jpg"];
-let index = 0;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const errorMessage = document.getElementById("errorMessage");
 
-function changeImage() {
-    index = (index + 1) % images.length;
-    document.getElementById("slideshow").src = images[index];
-}
-setInterval(changeImage, 3000);
-
-// Kalender
-document.getElementById("todayDate").innerText = new Date().toDateString();
+    // Simulerad login-check
+    if (username === "admin" && password === "password123") {
+        alert("Inloggning lyckades! Välkommen.");
+        window.location.href = "index.html"; // Gå till startsidan
+    } else {
+        errorMessage.innerText = "Fel användarnamn eller lösenord!";
+    }
+});
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(() => {
+        document.querySelector(".enter-button").style.opacity = "1";
+        document.querySelector(".country-quote").style.opacity = "1";
+    }, 500);
+});

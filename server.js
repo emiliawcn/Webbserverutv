@@ -50,3 +50,19 @@ const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
+
+app.get('/get-tests', async (req, res) => {
+    try {
+        const testData = await Test.find(); // Hämta all testdata
+        res.json(testData); // Skicka som JSON
+    } catch (err) {
+        res.status(500).json({ error: "Fel vid hämtning av data" });
+    }
+});
+
+app.get('/add-test', async (req, res) => {
+    const testDoc = new Test({ name: "Test Entry" });
+    await testDoc.save();
+    res.send("Test dokument har lagts till!");
+});
+

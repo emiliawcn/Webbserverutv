@@ -1,48 +1,173 @@
-/* Global styles */
+/* Grundstil */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
+    font-family: 'Georgia', serif; /* Ger en mer country-känsla */
+    background-color: #2e2a25; /* Mörk bakgrund */
+    color: #f5e1c1; /* Beige text */
     margin: 0;
     padding: 0;
-    color: #333;
 }
 
+/* Fullskärmsbakgrund */
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Tar upp hela skärmen */
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Gör att bilden fyller hela skärmen snyggt */
+}
+
+/* Central knapp */
+.enter-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    font-size: 22px;
+    background-color: rgba(139, 94, 59, 0.8); /* Mörkbrun knapp */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.enter-button:hover {
+    background-color: rgba(108, 72, 44, 0.9);
+}
+
+/* Header */
 header {
     text-align: center;
-    background-color: #d86cb7;
-    color: white;
-    padding: 20px 0;
-    margin-bottom: 20px;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    background-color: #4a3828;
+    color: #f5e1c1;
     padding: 20px;
-    width: 80%;
-    max-width: 600px;
+}
+
+/* Navigationsmeny */
+nav ul {
+    list-style: none;
+    padding: 0;
     text-align: center;
 }
 
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f5e1c1;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 2px solid #8b5e3b;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #8b5e3b;
+}
+
+/* Startsidan – Introduktion */
+.intro {
+    padding: 30px;
+    background-color: #3d3228;
+    text-align: center;
+    border-bottom: 4px solid #8b5e3b;
+}
+
+/* Featured sektion */
+.featured {
+    background-color: #4a3828;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Artistsidan – Grid-layout */
+.artist-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.artist {
+    background-color: #3d3228;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.artist img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 3px solid #8b5e3b;
+}
+
+/* Login-sida */
+.login-container {
+    background-color: #3d3228;
+    padding: 40px;
+    width: 300px;
+    margin: 50px auto;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.login-container h2 {
+    color: #f5e1c1;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #f5e1c1;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #8b5e3b;
+}
+
+button {
+    background-color: #8b5e3b;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #704528;
+}
+
+/* Footer */
 footer {
     text-align: center;
-    background-color: #333;
+    background-color: #4a3828;
     color: white;
-    padding: 10px 0;
+    padding: 15px;
     position: fixed;
     bottom: 0;
     width: 100%;
-}
-
-.slideshow-container img {
-    width: 100%;
-    border-radius: 10px;
 }
