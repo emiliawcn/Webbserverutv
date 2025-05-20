@@ -1,27 +1,27 @@
-/* Grundstil */
+
 body {
-    font-family: 'Georgia', serif; /* Ger en mer country-känsla */
-    background-color: #2e2a25; /* Mörk bakgrund */
-    color: #f5e1c1; /* Beige text */
+    font-family: 'Georgia', serif; 
+    background-color: #2e2a25; 
+    color: #f5e1c1; 
     margin: 0;
     padding: 0;
 }
 
-/* Fullskärmsbakgrund */
+
 .hero-container {
     position: relative;
     width: 100%;
-    height: 100vh; /* Tar upp hela skärmen */
+    height: 100vh; 
     overflow: hidden;
 }
 
 .hero-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Gör att bilden fyller hela skärmen snyggt */
+    object-fit: cover; 
 }
 
-/* Central knapp */
+
 .enter-button {
     position: absolute;
     top: 50%;
@@ -29,7 +29,7 @@ body {
     transform: translate(-50%, -50%);
     padding: 15px 30px;
     font-size: 22px;
-    background-color: rgba(139, 94, 59, 0.8); /* Mörkbrun knapp */
+    background-color: rgba(139, 94, 59, 0.8); 
     color: white;
     border: none;
     border-radius: 5px;
@@ -41,7 +41,7 @@ body {
     background-color: rgba(108, 72, 44, 0.9);
 }
 
-/* Header */
+
 header {
     text-align: center;
     background-color: #4a3828;
@@ -49,7 +49,7 @@ header {
     padding: 20px;
 }
 
-/* Navigationsmeny */
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -75,7 +75,7 @@ nav ul li a:hover {
     background-color: #8b5e3b;
 }
 
-/* Startsidan – Introduktion */
+
 .intro {
     padding: 30px;
     background-color: #3d3228;
@@ -83,7 +83,7 @@ nav ul li a:hover {
     border-bottom: 4px solid #8b5e3b;
 }
 
-/* Featured sektion */
+
 .featured {
     background-color: #4a3828;
     padding: 20px;
@@ -92,7 +92,7 @@ nav ul li a:hover {
     text-align: center;
 }
 
-/* Artistsidan – Grid-layout */
+
 .artist-grid {
     display: flex;
     flex-wrap: wrap;
@@ -118,7 +118,7 @@ nav ul li a:hover {
     border: 3px solid #8b5e3b;
 }
 
-/* Login-sida */
+
 .login-container {
     background-color: #3d3228;
     padding: 40px;
@@ -161,7 +161,7 @@ button:hover {
     background-color: #704528;
 }
 
-/* Footer */
+
 footer {
     text-align: center;
     background-color: #4a3828;
