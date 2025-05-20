@@ -1,4 +1,4 @@
-// Ladda in dynamisk artistinfo
+
 document.addEventListener("DOMContentLoaded", function() {
     console.log("Countrymusiksidan är laddad!");
 });
@@ -9,7 +9,6 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     const password = document.getElementById("password").value;
     const errorMessage = document.getElementById("errorMessage");
 
-    // Simulerad login-check
     if (username === "admin" && password === "password123") {
         alert("Inloggning lyckades! Välkommen.");
         window.location.href = "index.html"; // Gå till startsidan
